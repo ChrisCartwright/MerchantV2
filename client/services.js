@@ -22,7 +22,7 @@ angular.module('myApp').factory('AuthService',
       }
     }
 
-    /*function getUserStatus() {
+    function getUserStatus() {
       $http.get('/user/status')
       // handle success
       .success(function (data) {
@@ -36,26 +36,9 @@ angular.module('myApp').factory('AuthService',
       .error(function (data) {
         user = false;
       });
-    }*/
+    }
 
-    function getUserStatus() {
-  // create a new instance of deferred
-  var deferred = $q.defer();
-  // send a get request to the server
-  $http.get('/auth/status')
-  // handle success
-  .success(function (data) {
-    user = true;
-    deferred.resolve();
-  })
-  // handle error
-  .error(function (data) {
-    user = false;
-    deferred.reject();
-  });
-  // return promise object
-  return deferred.promise;
-}
+
 
     function login(username, password) {
 

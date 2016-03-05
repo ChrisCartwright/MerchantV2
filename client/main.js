@@ -13,7 +13,7 @@ myApp.config(function ($routeProvider) {
     })
     .when('/logout', {
       controller: 'logoutController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .when('/register', {
       templateUrl: 'partials/register.html',
@@ -36,7 +36,7 @@ myApp.config(function ($routeProvider) {
 /*myApp.run(function ($rootScope, $location, $route, AuthService) {
   $rootScope.$on('$routeChangeStart',
     function (event, next, current) {
-      AuthService.getUserStatus();
+      //AuthService.getUserStatus();
       if (next.access.restricted &&
           !AuthService.isLoggedIn()) {
         $location.path('/login');
@@ -52,3 +52,4 @@ myApp.run(function ($rootScope, $location, $route, AuthService) {
     }
   });
 });
+
